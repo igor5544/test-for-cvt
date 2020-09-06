@@ -131,14 +131,14 @@
   }
 
   function swapBtn() {
-    let newBtn = loginBtnElement.cloneNode(true);
+    let newBtnElement = loginBtnElement.cloneNode(true);
 
-    newBtn.classList.add('header__btn--logout');
-    newBtn.textContent = BTN_TEXT_LOGOUT;
-    newBtn.setAttribute('href', '');
-    newBtn.addEventListener('click', userLogout);
+    newBtnElement.classList.add('header__btn--logout');
+    newBtnElement.textContent = BTN_TEXT_LOGOUT;
+    newBtnElement.setAttribute('href', '');
+    newBtnElement.addEventListener('click', userLogout);
 
-    loginBtnElement.replaceWith(newBtn);
+    loginBtnElement.replaceWith(newBtnElement);
 
     function userLogout(evt) {
       evt.preventDefault();
@@ -146,7 +146,7 @@
 
       localStorage.setItem('remember', 'false');
 
-      newBtn.replaceWith(loginBtnElement);
+      newBtnElement.replaceWith(loginBtnElement);
     }
   }
 
@@ -204,11 +204,11 @@
     }
 
     tab.addEventListener('click', function (evt) {
-      let activeTab = document.querySelector('.navigation__link--active');
+      let activeTabElement = document.querySelector('.navigation__link--active');
       evt.preventDefault();
 
-      if (tab !== activeTab) {
-        changeActiveTabLink(tab, activeTab);
+      if (tab !== activeTabElement) {
+        changeActiveTabLink(tab, activeTabElement);
         changeActiveArticle(i);
       }
     });
@@ -223,10 +223,10 @@
   }
 
   function changeActiveArticle(i) {
-    let activeTab = document.querySelector('.tab-item--active');
+    let activeTabElement = document.querySelector('.tab-item--active');
 
-    activeTab.classList.add('tab-item--inactive');
-    activeTab.classList.remove('tab-item--active');
+    activeTabElement.classList.add('tab-item--inactive');
+    activeTabElement.classList.remove('tab-item--active');
 
     tabList[i].classList.add('tab-item--active');
     tabList[i].classList.remove('tab-item--inactive');
