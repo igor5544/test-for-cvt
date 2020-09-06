@@ -1,0 +1,65 @@
+.channel-list {
+  @include reset-list;
+  max-height: 696px;
+  overflow-y: scroll;
+  padding-right: 11px;
+  margin-right: 5px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $bg-color--light;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $bg-color--midle;
+    border-radius: 10px;
+  }
+
+  &--js {
+    position: relative;
+    overflow: hidden;
+    padding-right: 4px;
+    margin-right: 0;
+  }
+
+  .mCustomScrollBox {
+    padding-right: 16px;
+  }
+
+  .mCSB_inside>.mCSB_container {
+    margin-right: 0;
+  }
+
+  .mCSB_scrollTools {
+    width: 8px;
+  }
+
+  .mCS-inset-dark.mCSB_scrollTools .mCSB_draggerRail {
+    display: none;
+  }
+
+  .mCS-inset-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 4px;
+    height: 500px;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: $bg-color--midle;
+  }
+
+  .mCSB_draggerContainer {
+    background-color: $bg-color--light;
+    border-radius: 2px;
+  }
+}
+
+.channel-list__item {
+  margin-bottom: 18px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

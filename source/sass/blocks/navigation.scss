@@ -1,0 +1,37 @@
+.navigation {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+.navigation__list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navigation__link {
+  transition: all 0.3s;
+  display: block;
+  padding-bottom: 6px;
+  margin-right: 12px;
+  margin-left: 13px;
+  margin-bottom: 9px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33px;
+  text-decoration: none;
+  color: $text-color--main;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+
+  &--active,
+  &:hover {
+    color: $text-color--decor;
+    border-bottom: 2px solid $border-color--decor;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

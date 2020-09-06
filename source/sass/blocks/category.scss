@@ -1,0 +1,92 @@
+.category a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.category div {
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 6px;
+  background: linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%);
+  background-color: $bg-color--clear;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.category {
+  position: relative;
+  transition: all 0.3s;
+  max-width: 280px;
+  min-height: 208px;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 4px $shadow-color--light;
+
+  &--comedy div {
+    background: linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%);
+  }
+
+  &--drama div {
+    background: linear-gradient(127.83deg, #f2994a 8.44%, #eb5757 91.36%);
+  }
+
+  &--fantastic div {
+    background: linear-gradient(127.83deg, #56ccf2 8.44%, #2f80ed 91.36%);
+  }
+
+  &--horror div {
+    background: linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%);
+  }
+
+  &:hover div,
+  &:active div {
+    opacity: 1;
+  }
+}
+
+
+@media (pointer: coarse) {
+  .category {
+    cursor: pointer;
+  }
+}
+
+.category a {
+  transition: all 0.3s;
+  margin: 0;
+  min-height: 208px;
+  height: 100%;
+  padding: 80px 10px 10px 10px;
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.category img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 25px;
+}
+
+.category h4 {
+  margin: 0;
+  color: $text-color--lighter;
+  font-size: 20px;
+  text-align: center;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+@media (max-width: $tablet-width) {
+  .category {
+    max-width: 100%;
+  }
+}

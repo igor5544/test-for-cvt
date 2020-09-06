@@ -1,0 +1,20 @@
+.contacts-list {
+  @include reset-list;
+  margin-bottom: 7px;
+}
+
+.contacts-list__link {
+  transition: all 0.3s;
+  text-decoration: none;
+  line-height: 19px;
+  letter-spacing: 0.1px;
+  color: $text-color--main;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
