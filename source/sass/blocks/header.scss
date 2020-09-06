@@ -17,7 +17,8 @@
 
 .header__search-form {
   flex-basis: 50%;
-  margin-right: 20px;
+  margin-right: auto;
+  margin-left: 85px;
 }
 
 .header__login-wrapper {
@@ -26,14 +27,16 @@
 }
 
 .header__user {
-  min-width: 50px;
+  width: 150px;
   width: 100%;
+  padding-bottom: 1px;
   margin: 0;
   margin-right: 19px;
-  text-align: center;
+  margin-left: auto;
+  text-align: right;
 
   &--edit {
-    max-width: 120px;
+    width: 190px;
     padding: 0;
     border: none;
     border-bottom: 1px solid $border-color--dark;
@@ -107,9 +110,11 @@
   }
 
   .header__user {
-    max-width: 100%;
+    width: 100%;
     margin-right: 0;
+    padding-bottom: 1px;
     margin-bottom: 10px;
+    text-align: center;
 
     &--edit {
       text-align: center;
