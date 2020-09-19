@@ -1,42 +1,8 @@
+/* requires:
+popup-utils.js
+*/
+
 'use strict';
-
-{
-  objectFitImages();
-}
-
-{
-  const ZERO_PADDING = 0;
-
-  let htmlElement = document.querySelector('html');
-  let bodyElement = document.body;
-
-  function scrollbarWidth() {
-    let documentWidth = parseInt(document.documentElement.clientWidth);
-    let windowsWidth = parseInt(window.innerWidth);
-    let scrollbarWidth = windowsWidth - documentWidth;
-    return scrollbarWidth;
-  }
-
-  function scrollIndent() {
-    bodyElement.style.marginRight = scrollbarWidth() + 'px';
-  }
-
-  function hideScroll() {
-    htmlElement.setAttribute('style', '');
-    htmlElement.classList.add('open-popup');
-  }
-
-  function showScroll() {
-    bodyElement.style.marginRight = ZERO_PADDING;
-    htmlElement.classList.remove('open-popup');
-  }
-
-  window.popupUtiils = {
-    scrollIndent: scrollIndent,
-    hideScroll: hideScroll,
-    showScroll: showScroll,
-  };
-}
 
 {
   const POPUP_REMOVE_DELAY_IN_MS = 300;
@@ -187,68 +153,4 @@
       inputTextElement.replaceWith(userNameElement);
     }
   }
-}
-
-{
-  const INACTIVE_TAB_INDEX = -1;
-
-  let tabBtnsElements = document.querySelectorAll('.navigation__link');
-  let tabBtnsList = Array.prototype.slice.call(tabBtnsElements);
-  let tabElements = document.querySelectorAll('.tab-item');
-  let tabList = Array.prototype.slice.call(tabElements);
-
-  tabBtnsList.forEach(function (tab, i) {
-    if (i === 0) {
-      tab.classList.add('navigation__link--active');
-      tab.tabIndex = INACTIVE_TAB_INDEX;
-    }
-
-    tab.addEventListener('click', function (evt) {
-      let activeTabElement = document.querySelector('.navigation__link--active');
-      evt.preventDefault();
-
-      if (tab !== activeTabElement) {
-        changeActiveTabLink(tab, activeTabElement);
-        changeActiveArticle(i);
-      }
-    });
-  });
-
-  function changeActiveTabLink(newTab, previousTab) {
-    previousTab.removeAttribute('tabIndex');
-    newTab.tabIndex = INACTIVE_TAB_INDEX;
-
-    previousTab.classList.remove('navigation__link--active');
-    newTab.classList.add('navigation__link--active');
-  }
-
-  function changeActiveArticle(i) {
-    let activeTabElement = document.querySelector('.tab-item--active');
-
-    activeTabElement.classList.add('tab-item--inactive');
-    activeTabElement.classList.remove('tab-item--active');
-
-    tabList[i].classList.add('tab-item--active');
-    tabList[i].classList.remove('tab-item--inactive');
-  }
-
-
-  tabList.forEach(function (tab, i) {
-    if (i === 0) {
-      tab.classList.add('tab-item--active');
-    } else {
-      tab.classList.add('tab-item--inactive');
-    }
-  });
-}
-
-{
-  let chanelListElement = document.querySelector('.channel-list');
-
-  chanelListElement.classList.add('channel-list--js');
-
-  $('.channel-list').mCustomScrollbar({
-    normalizeDelta: true,
-    theme:"inset-dark",
-  });
 }

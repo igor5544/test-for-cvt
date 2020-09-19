@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "child-replace-with-polyfill": "^1.0.1",
-    "del": "^4.1.1"
+    "del": "^4.1.1",
+    "gulp-deporder": "^1.2.0"
   }
 }

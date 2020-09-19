@@ -1,8 +1,18 @@
+
 'use strict';
 
 {
-  objectFitImages();
+  let chanelListElement = document.querySelector('.channel-list');
+
+  chanelListElement.classList.add('channel-list--js');
+
+  $('.channel-list').mCustomScrollbar({
+    normalizeDelta: true,
+    theme: "inset-dark",
+  });
 }
+
+'use strict';
 
 {
   const ZERO_PADDING = 0;
@@ -37,6 +47,12 @@
     showScroll: showScroll,
   };
 }
+
+/* requires:
+popup-utils.js
+*/
+
+'use strict';
 
 {
   const POPUP_REMOVE_DELAY_IN_MS = 300;
@@ -189,6 +205,14 @@
   }
 }
 
+'use strict';
+
+{
+  objectFitImages();
+}
+
+'use strict';
+
 {
   const INACTIVE_TAB_INDEX = -1;
 
@@ -232,23 +256,11 @@
     tabList[i].classList.remove('tab-item--inactive');
   }
 
-
   tabList.forEach(function (tab, i) {
     if (i === 0) {
       tab.classList.add('tab-item--active');
     } else {
       tab.classList.add('tab-item--inactive');
     }
-  });
-}
-
-{
-  let chanelListElement = document.querySelector('.channel-list');
-
-  chanelListElement.classList.add('channel-list--js');
-
-  $('.channel-list').mCustomScrollbar({
-    normalizeDelta: true,
-    theme:"inset-dark",
   });
 }
